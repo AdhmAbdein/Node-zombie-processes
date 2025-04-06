@@ -1,0 +1,9 @@
+
+groups:
+  - name: number_of_zombie_processes
+    rules:
+      - record: number_of_zombie_processes_rule
+        expr: node_procs_zombie
+        labels:
+          node1: number_of_zombie_processe
+

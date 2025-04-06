@@ -1,0 +1,15 @@
+global:
+route:
+  receiver: 'slack'
+  group_by: ['alertname']
+  group_wait: 10s
+  group_interval: 15s
+
+receivers:
+  - name: 'slack'
+    slack_configs:
+      - channel: "#devops_team"
+        send_resolved: true
+        api_url: 'https://hooks.slack.com/services/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'
+        title: '{{ .CommonAnnotations.summary }}'
+        text: '{{ .CommonAnnotations.description }}'
